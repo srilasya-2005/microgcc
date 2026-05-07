@@ -274,7 +274,24 @@ const App = () => {
                   ))}
                 </div>
                 <div className="p-8 mt-auto">
-                   <button className="w-full bg-slate-900 text-white font-black text-[10px] uppercase tracking-[0.3em] py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-primary-600 transition-all shadow-xl shadow-slate-900/10 group active:scale-95">
+                   <button 
+                    onClick={() => {
+                      if (!data) return;
+                      const headers = ['Date', 'Type', 'Sales_Total'];
+                      const rows = [
+                        ...data.historical.map(h => [h.Date, 'Historical', h.Total]),
+                        ...data.forecast.map(f => [f.Date, 'Forecast', f.Total])
+                      ];
+                      const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+                      const blob = new Blob([csvContent], { type: 'text/csv' });
+                      const url = window.URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = `Forecasting_Analysis_${selectedState}_${new Date().toISOString().split('T')[0]}.csv`;
+                      a.click();
+                    }}
+                    className="w-full bg-slate-900 text-white font-black text-[10px] uppercase tracking-[0.3em] py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-primary-600 transition-all shadow-xl shadow-slate-900/10 group active:scale-95"
+                  >
                      <Download size={16} className="group-hover:translate-y-0.5 transition-transform" />
                      Export Analysis Report
                    </button>
