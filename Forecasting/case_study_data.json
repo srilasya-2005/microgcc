@@ -1,0 +1,607 @@
+{
+  "docx_content": "Assignment \u2013 Data Science (End-to-End Time Series Forecasting System with API) Objective: \nBuild a production-ready forecasting system that: \n1. Trains multiple forecasting algorithms \n2. Compares and selects the best model \n3. Exposes predictions via a REST API \n4. Should be designed like real backend service \nDataset: \nUse the attached data set for your case study \n\nShared in excel file \n\n\nProblem Statement \nForecast next 8weeks of sales for each state using historical data. Your solution must: \n\u2022 Handle missing dates / missing values (if any) \n\u2022 Handle seasonality & trend \n\u2022 Automatically select the best performing model \n\u2022 Serve predictions via API \nMandatory Models to Implement \nTrain and compare at least: \n1. ARIMA / SARIMA \n2. Facebook Prophet \n3. XGBoost (with lag features) \n4. LSTM (deep learning) \nFeature Engineering (critical part) \nYou must create: \n\u2022 Lag features (t-1, t-7, t-30) \n\u2022 Rolling mean / std \n\u2022 Day of week, month, holiday flag \n\u2022 Train / validation split using time series logic (no leakage) \nCreate a short video of your solution and share it along with Code and documentation",
+  "xlsx_preview": {
+    "Sheet1": [
+      {
+        "State": "Alabama",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 109574036.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Arizona",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 109101594.60000001,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Arkansas",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 58049432.2,
+        "Category": "Beverages"
+      },
+      {
+        "State": "California",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 444766890.59999996,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Colorado",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 89816716.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Connecticut",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 49715400.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Florida",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 358112985.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Georgia",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 198967926.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Illinois",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 167913696.79999998,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Indiana",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 117489218.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Iowa",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 60702757.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Kansas",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 48255942.9,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Kentucky",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 91340443.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Louisiana",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 94697654.89999999,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Maine",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 25031692.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Maryland",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 89261853.2,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Massachusetts",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 98820411.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Michigan",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 161601849.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Minnesota",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 85728575.2,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Mississippi",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 37637324.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Missouri",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 101366118.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Nebraska",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 16673878.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Nevada",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 51173890.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "New Hampshire",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 30014723.099999998,
+        "Category": "Beverages"
+      },
+      {
+        "State": "New Mexico",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 34731555.300000004,
+        "Category": "Beverages"
+      },
+      {
+        "State": "New York",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 240815212.20000002,
+        "Category": "Beverages"
+      },
+      {
+        "State": "North Carolina",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 182341458.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Ohio",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 194452564.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Oklahoma",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 77743069.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Oregon",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 58257574.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Pennsylvania",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 197064569.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Rhode Island",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 13851887.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "South Carolina",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 97713917.2,
+        "Category": "Beverages"
+      },
+      {
+        "State": "South Dakota",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 14701327.200000001,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Tennessee",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 133945172.6,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Texas",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 472848726.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Utah",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 42799315.6,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Vermont",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 10140664.299999999,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Virginia",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 153170304.29999998,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Washington",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 100959341.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "West Virginia",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 38228549.6,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Wisconsin",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 84291415.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Wyoming",
+        "Date": "2019-01-12T00:00:00",
+        "Total": 11479224.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Alabama",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 112189103.8,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Arizona",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 115424158.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Arkansas",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 58551066.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "California",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 492597099.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Colorado",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 92194329.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Connecticut",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 48505472.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Florida",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 389736360.6,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Georgia",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 204848830.2,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Illinois",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 169707087.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Indiana",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 117416241.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Iowa",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 62361904.300000004,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Kansas",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 47489199.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Kentucky",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 92866944.89999999,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Louisiana",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 98130560.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Maine",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 24844075.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Maryland",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 88673877.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Massachusetts",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 97717028.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Michigan",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 160641810.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Minnesota",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 86713263.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Mississippi",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 36599073.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Missouri",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 102216388.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Nebraska",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 16788387.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Nevada",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 55645617.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "New Hampshire",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 29026633.6,
+        "Category": "Beverages"
+      },
+      {
+        "State": "New Mexico",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 35945861.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "New York",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 238220084.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "North Carolina",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 188325661.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Ohio",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 198087098.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Oklahoma",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 78606323.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Oregon",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 60796877.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Pennsylvania",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 198030518.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Rhode Island",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 13856302.799999999,
+        "Category": "Beverages"
+      },
+      {
+        "State": "South Carolina",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 101518325.30000001,
+        "Category": "Beverages"
+      },
+      {
+        "State": "South Dakota",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 14897185.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Tennessee",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 136685980.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Texas",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 481478332.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Utah",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 43344283.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Vermont",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 9998306.8,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Virginia",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 156968155.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Washington",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 101445077.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "West Virginia",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 39411931.300000004,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Wisconsin",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 84430399.9,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Wyoming",
+        "Date": "2019-03-11T00:00:00",
+        "Total": 11816719.299999999,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Alabama",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 129106730.4,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Arizona",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 119877789.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Arkansas",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 67349815.0,
+        "Category": "Beverages"
+      },
+      {
+        "State": "California",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 506587724.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Colorado",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 100423015.9,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Connecticut",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 53879305.800000004,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Florida",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 397812263.7,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Georgia",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 234203405.8,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Illinois",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 181091999.3,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Indiana",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 127850724.6,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Iowa",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 63444415.199999996,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Kansas",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 50331958.5,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Kentucky",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 106008269.1,
+        "Category": "Beverages"
+      },
+      {
+        "State": "Louisiana",
+        "Date": "2019-06-10T00:00:00",
+        "Total": 110909954.6,
+        "Category": "Beverages"
+      }
+    ]
+  }
+}
